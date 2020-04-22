@@ -1,11 +1,11 @@
 # raspbian-motioneye
 Guide for setting up Rasbian lite running MotionEye headless for Raspberry Pi 4
 
-0. [Preface](## 0. Preface)
-1. [Preparation](## 1. Setup)
-2. [Setup](## 2. Setup)
-3. [Installation](## 3. Installation)
-4. [Configuration](## 4. Configuration)
+0. [Preface](#0-preface)
+1. [Preparation](#1-preparation)
+2. [Setup](#2-setup)
+3. [Installation](#3-installation)
+4. [Configuration](#4-configuration)
 
 ## 0. Preface
 
@@ -21,7 +21,7 @@ While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` with the app
 5. Run Rufus, select the Raspbian Lite image, select the micro SD card, and click start
 6. Open a file explorer and navigate to the micro SD card
 <details><summary>Click if micro SD card not showing</summary>
-Press `Win` + `R`. Type `diskpart` then press `Enter` then run `list disk`. Select the appropriate disk with `select disk X` where X is the disk number. Run `list partition`. Select the appropriate partition with `select disk Y` where Y is the partition number (usually partition 1, ~256MB). Run `assign letter=i`.</details>
+Press `Win` + `R`. Type `diskpart` then press `Enter` then run `list disk`. Select the appropriate disk with `select disk X` where X is the disk number. Run `list partition`. Select the appropriate partition with `select partition Y` where Y is the partition number (usually partition 1, ~256MB). Run `assign letter=i`.</details>
 7. Open `config.txt` in an editor and add the following lines to the end of the file:  
 
 	```  
