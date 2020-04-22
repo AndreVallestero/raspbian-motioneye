@@ -6,6 +6,7 @@ Guide for setting up Rasbian lite running MotionEye headless for the Raspberry P
 2. [Setup](#2-setup)
 3. [Installation](#3-installation)
 4. [Configuration](#4-configuration)
+5. [Troubleshooting](#5-troubleshooting)
 
 ## 0. Preface
 
@@ -19,9 +20,7 @@ While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` with the app
 3. Download [Raspbian lite](https://www.raspberrypi.org/downloads/raspbian/)
 4. Plug in a micro SD card of at least 4GB
 5. Run Rufus, select the Raspbian Lite image, select the micro SD card, and click start
-6. Open a file explorer and navigate to the micro SD card
-<details><summary>Click if micro SD card not showing</summary>
-Press `Win` + `R`. Type `diskpart` then press `Enter` then run `list disk`. Select the appropriate disk with `select disk <x>` where x is the disk number. Run `list partition`. Select the appropriate partition with `select partition <y>` where y is the partition number (usually partition 1, ~256MB). Run `assign letter=i`.</details>
+6. Open a file explorer and navigate to the micro SD card (if micro SD card doesn't show, see [**Troubleshooting 1**](#1-micro-sd-card-not-showing))
 7. Open `config.txt` in an editor and add the following lines to the end of the file:  
 
 	```  
@@ -50,3 +49,12 @@ Press `Win` + `R`. Type `diskpart` then press `Enter` then run `list disk`. Sele
 10. Eject the micro SD card from the computer
 11. Insert the micro SD card into the Raspberry Pi
 12. Plug in the Ethernet cable if available and power on the Raspberry Pi
+
+
+## 5. Troubleshooting
+### 1. Micro SD card not showing
+1. Press `Win` + `R`
+2. Type `diskpart` then press `Enter` then run `list disk`
+3. Select the appropriate disk with `select disk <x>` where x is the disk number
+4. Run `list partition`. Select the appropriate partition with `select partition <y>` where y is the partition number (usually partition 1, ~256MB)
+5. Run `assign letter=i`
