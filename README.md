@@ -1,5 +1,5 @@
 # raspbian-motioneye
-Guide for setting up Rasbian lite running MotionEye headless for Raspberry Pi 4
+Guide for setting up Rasbian lite running MotionEye headless for the Raspberry Pi 4
 
 0. [Preface](#0-preface)
 1. [Preparation](#1-preparation)
@@ -12,7 +12,7 @@ Guide for setting up Rasbian lite running MotionEye headless for Raspberry Pi 4
 While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` with the appropriate value for your usage, including the `<` and `>` symbols 
 
 
-## 1. Setup  
+## 1. Preparation  
 
 1. Download and install [Putty](https://www.putty.org/)
 2. Download and install [Rufus](https://rufus.ie/)
