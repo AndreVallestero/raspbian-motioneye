@@ -46,7 +46,7 @@ While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` (including t
 		psk="<network password>"
 	}
 	```
-	Valid `ISO Alpha 2` codes examples: `US``DE``GB``CA`
+	Valid `ISO Alpha 2` codes examples: `US` `DE` `GB` `CA`
 10. Eject the micro SD card from the computer
 11. Insert the micro SD card into the Raspberry Pi
 12. Plug in the Ethernet cable if available and power on the Raspberry Pi
