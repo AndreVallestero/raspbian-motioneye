@@ -25,13 +25,12 @@ While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` (including t
 
 	```
 	# Use gpu_mem=128 if a camera is attached to the device
-	gpu_mem=16
 	boot_delay=0
 	disable_splash=1
 	
+	gpu_freq_min=250
 	arm_freq=1600
 	h264_freq=600
-	gpu_freq_min=250
 	```  
 8. Create a new file named `ssh` in the micro SD card's root directory and put a single space in it
 9. Create another new file named `wpa_supplicant.conf` and set it's contents to:
