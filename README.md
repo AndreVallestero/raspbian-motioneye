@@ -80,6 +80,7 @@ While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` (including t
 8. Reconnect to the Raspberry Pi with PuTTY
 9. Run `sudo raspi-config` then run `Update` then change netowrk hostname and localization options
 10. Reboot and reconnect to the Raspberry Pi with PuTTY using the new hostname/IP address
+11. Setup [fail2ban](https://pimylifeup.com/raspberry-pi-fail2ban/) for added security
 
 ## 3. Installation
 Run the following commands  
