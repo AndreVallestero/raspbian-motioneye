@@ -55,9 +55,13 @@ While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` (including t
 1. Run PuTTY
 2. Enter hostname `raspberrypi` and click "Open" (if PuTTY raises error "Host does not exist", see [**Troubleshooting 2**](#2-PuTTY-host-does-not-exist))
 3. Login to the shell with login `pi` and password `raspberry`
-4. Change password with `passwd` then enter the new password
-5. Change root password with `sudo passwd root` the enter the new root password
-6. Set a static IP by running `sudo nano /etc/dhcpcd.conf` and adding the following lines:
+4. Change root password with `sudo passwd root` the enter the new root password
+5. Create a new user `sudo adduser alice`
+6. Add user to sudo group `sudo usermod -a -G`
+7. Switch to new user `sudo su - alice`
+8. Stop user "pi" processes `sudo pkill -u pi`
+9. Delete the "pi" user `sudo deluser -remove-home pi`
+10. Set a static IP by running `sudo nano /etc/dhcpcd.conf` and adding the following lines:
 
 	```
 	interface wlan0
@@ -69,7 +73,7 @@ While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` (including t
 	static routers=<gateway ip>
 	```
 	Press `Ctrl + O` then `Ctrl + X` to save and exit
-7. Update and upgrade software and firmware by running the following commands then reboot:
+11. Update and upgrade software and firmware by running the following commands then reboot:
 
 	```
 	sudo apt update
@@ -77,10 +81,10 @@ While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` (including t
 	sudo rpi-update
 	sudo reboot
 	```
-8. Reconnect to the Raspberry Pi with PuTTY
-9. Run `sudo raspi-config` then run `Update` then change netowrk hostname and localization options
-10. Reboot and reconnect to the Raspberry Pi with PuTTY using the new hostname/IP address
-11. Setup [fail2ban](https://pimylifeup.com/raspberry-pi-fail2ban/) for added security
+12. Reconnect to the Raspberry Pi with PuTTY
+13. Run `sudo raspi-config` then run `Update` then change netowrk hostname and localization options
+14. Reboot and reconnect to the Raspberry Pi with PuTTY using the new hostname/IP address
+15. Setup [fail2ban](https://pimylifeup.com/raspberry-pi-fail2ban/) for added security
 
 ## 3. Installation
 Run the following commands  
