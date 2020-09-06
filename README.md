@@ -57,8 +57,8 @@ While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` (including t
 3. Login to the shell with login `pi` and password `raspberry`
 4. Change root password with `sudo passwd root` the enter the new root password
 5. Create a new user `sudo adduser alice`
-6. Add user to sudo group `sudo usermod -a -G sudo [new username]`
-7. Switch to new user `sudo su - alice`
+6. Add user to sudo group `sudo usermod -a -G sudo [new user name]`
+7. Switch to new user `sudo su -  [new user name]`
 8. Stop user "pi" processes `sudo pkill -u pi`
 9. Delete the "pi" user `sudo deluser -remove-home pi`
 10. Set a static IP by running `sudo nano /etc/dhcpcd.conf` and adding the following lines:
