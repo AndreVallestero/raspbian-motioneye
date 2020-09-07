@@ -79,6 +79,8 @@ While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` (including t
 	sudo apt update
 	sudo apt full-upgrade
 	sudo rpi-update
+	sudo apt autoremove --purge
+	sudo apt clean
 	sudo reboot
 	```
 12. Reconnect to the Raspberry Pi with PuTTY
