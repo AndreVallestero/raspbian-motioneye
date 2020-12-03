@@ -1,0 +1,112 @@
+download raspbian lite (minimal)
+flash with rufus
+
+https://desertbot.io/blog/headless-raspberry-pi-4-ssh-wifi-setup
+If drive not showing up, use list disk and mount it using "list disk; select disk X; list parition; select partition X; assign letter=f"
+Run config (overclock, disable scanline, disable splash, set pause time 0)
+Add following lines
+```
+# CUSTOM CHANGES, defaults in comments
+gpu_mem=16
+boot_delay=0
+disable_splash=1
+
+arm_freq=1600
+gpu_freq_min=250
+h264_freq=600```
+
+
+
+	Run Notepad
+	In a new file put in one space and nothing more
+	Click File / Save As …
+	Be sure to set Save as type to All Files (so the file is NOT saved with a .txt extension)
+	Call the file ssh and save it
+	Close the file
+If you are comfortable with the Windows command line you could try this instead (untested!):
+    Open up a command line
+    Switch to the drive and root where boot is located:
+    Type: type NUL >> ssh
+    Verify that file ssh was created
+Create a file in the root of boot called: wpa_supplicant.conf (instructions below). Then paste the following into it (adjusting for your ISO 3166 alpha-2 country code, network name and network password):
+	country=US
+	ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+	update_config=1
+
+	network={
+		scan_ssid=1
+		ssid="NETWORK-NAME"
+		psk="NETWORK-PASSWORD"
+	}
+Windows instructions (wifi settings)
+    Run Notepad
+    Paste in the contents above (adjusting for the name of your country code, network name and network password)
+    Click File / Save As …
+    Be sure to set Save as type to All Files (so the file is NOT saved with a .txt extension)
+    Call the file wpa_supplicant.conf and save it
+    Close the file
+	
+Use putty to login via ssh
+Get IP from router, hostname is raspberrypi
+
+default login: pi
+default password: raspberry
+
+change password with `sudo passwd`
+change root password, `sudo passwd root`
+
+change user name (important for security reasons)
+sudo su
+usermod -l newUsername oldUsername
+usermod -d /home/newUsername -m newUsername
+
+add the following lines to /etc/dhcpcd.conf
+
+interface wlan0
+
+static ip_address=192.168.1.64
+static routers=192.168.1.1
+
+
+interface eth0
+
+static ip_address=192.168.1.64
+static routers=192.168.1.1
+
+sudo apt fix-broken install
+sudo apt update
+sudo apt fix-broken install
+sudo apt dist-upgrade
+sudo rpi-update
+reboot
+
+raspi-config > update
+reboot
+
+raspi-config
+
+sudo apt fix-broken install
+sudo apt install python-pip python-dev libssl-dev libcurl4-openssl-dev libjpeg-dev libz-dev libavcodec58 libavdevice58 libavformat58 libavutil56 libmariadb3 libmicrohttpd12 libpq5 libswscale5 libwebp6 libwebpmux3 
+
+mkdir nvr-software
+
+
+
+https://ffmpeg.org/releases/ffmpeg-4.2.2.tar.xz
+cflags=-march=armv8-a+crc -mfpu=neon-fp-armv8 -mtune=cortex-a72 -mcpu=cortex-a72 -Ofast -pipe -flto -Wl,-flto -s
+
+
+wget https://github.com/Motion-Project/motion/releases/download/release-4.3.1/pi_buster_motion_4.3.1-1_armhf.deb
+sudo dpkg -i pi_buster_motion*
+
+sudo pip install motioneye
+sudo mkdir -p /etc/motioneye /var/lib/motioneye
+sudo cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
+sudo nano /etc/motioneye/motioneye.conf
+sudo cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
+sudo systemctl daemon-reload
+sudo systemctl enable motioneye
+sudo systemctl start motioneye
+
+sudo pip install motioneye --upgrade
+sudo systemctl restart motioneye
