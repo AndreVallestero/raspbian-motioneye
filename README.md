@@ -62,7 +62,7 @@ If you would like to boot off a USB, HDD, or SSD, follow [this](https://www.toms
 7. Switch to new user `sudo su -  [new user name]`
 8. Stop user "pi" processes `sudo pkill -u pi`
 9. Delete the "pi" user `sudo deluser -remove-home pi`
-10. Set a static IP by running `sudo nano /etc/dhcpcd.conf` and adding the following lines:
+10. Set a static IP by running `sudo nano /etc/dhcpcd.conf` and adding the following lines (can be skiped with static dhcp on your router):
 
 	```
 	interface wlan0
