@@ -97,7 +97,7 @@ Run the following commands
 ```
 sudo apt install python-pip python-dev libssl-dev libcurl4-openssl-dev libjpeg-dev libz-dev libavcodec58 libavdevice58 libavformat58 libavutil56 libmariadb3 libmicrohttpd12 libpq5 libswscale5 libwebp6 libwebpmux3
 mkdir -p ~/Downloads ; cd ~/Downloads
-wget https://github.com/Motion-Project/motion/releases/download/release-4.3.1/pi_buster_motion_4.3.1-1_armhf.deb
+wget https://github.com/Motion-Project/motion/releases/download/release-4.2.2/pi_buster_motion_4.2.2-1_armhf.deb
 sudo dpkg -i pi_buster_motion*
 sudo pip install motioneye
 ```
