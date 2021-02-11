@@ -12,7 +12,7 @@ Guide for setting up Rasbian lite running MotionEye headless for the Raspberry P
 
 While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` (including the `<` and `>` symbols) with the appropriate value for your usage
 
-If you would like to boot off a USB, HDD, or SSD, follow [this](https://www.tomshardware.com/how-to/boot-raspberry-pi-4-usb) guide (use dd rescue to clone the sdcard).
+If you would like to boot off a USB, HDD, or SSD, follow [this](https://www.tomshardware.com/how-to/boot-raspberry-pi-4-usb) guide (use dd rescue to clone the sdcard) then use the "Expand Filesystem" command in `raspi-config`.
 
 It's highly recommended that you setup https with DDNS (afraid org) + Lets Encrypt (certbot) if you would like to access the web client remotely.
 
