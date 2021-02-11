@@ -14,7 +14,7 @@ While reading the guide, replace all instances of `<T3xtT0R3pl4ce>` (including t
 
 If you would like to boot off a USB, HDD, or SSD, follow [this](https://www.tomshardware.com/how-to/boot-raspberry-pi-4-usb) guide (use dd rescue to clone the sdcard).
 
-It's highly recommended that you setup https with DDNS (afraid org) + Lets Encrypt (certbot)
+It's highly recommended that you setup https with DDNS (afraid org) + Lets Encrypt (certbot) if you would like to access the web client remotely.
 
 ## 1. Preparation  
 
