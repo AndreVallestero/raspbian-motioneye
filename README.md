@@ -125,7 +125,45 @@ sudo pip install -U motioneye
 sudo systemctl restart motioneye
 ```
 
-## 5. Troubleshooting
+## 5. HTTPS / TLS (Optional)
+1. Acquire a [sub]domain via https://freedns.afraid.org/ (free) or some other domain / DNS service
+
+2. Run the following commands
+
+```
+sudo apt install nginx certbot python-certbot-nginx
+sudo rm /etc/nginx/sites-available/default
+sudo rm /etc/nginx/sites-enabled/default
+sudo nano /etc/nginx/conf.d/<my.d0m41n.0rg>.conf
+```
+
+3. Insert the following lines
+
+```
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name <my.d0m41n.0rg>;
+    location / {
+        proxy_pass http://127.0.0.1:8765/;
+    }
+}
+```
+
+4. Portforward 80 to 80 on your [sub]domain aquired in step 5.1
+
+5. Run the follow commands
+
+```
+sudo systemctl enable nginx
+sudo systemctl start nginx
+sudo certbot --nginx
+```
+
+4. Disable portforward for port 80, and enable it for port 443
+
+
+## 6. Troubleshooting
 ### 1. Micro SD card not showing
 1. Press `Win` + `R`
 2. Type `diskpart` then press `Enter` then run `list disk`
