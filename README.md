@@ -160,7 +160,7 @@ sudo systemctl start nginx
 sudo certbot --nginx
 ```
 
-4. Disable portforward for port 80, and enable it for port 443
+6. Disable portforward for port 80 to 80, and enable it for port 443 to 443
 
 
 ## 6. Troubleshooting
