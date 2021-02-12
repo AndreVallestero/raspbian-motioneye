@@ -126,7 +126,7 @@ sudo systemctl restart motioneye
 ```
 
 ## 5. HTTPS / TLS (Optional)
-1. Acquire a [sub]domain via https://freedns.afraid.org/ (free) or some other domain / DNS service
+1. Acquire a [sub]domain via https://freedns.afraid.org/ (free) or some other domain / DNS service and point it to your IP (DDNS is recommended instead)
 
 2. Run the following commands
 
