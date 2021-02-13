@@ -6,7 +6,8 @@ Guide for setting up Rasbian lite running MotionEye headless for the Raspberry P
 2. [Setup](#2-setup)
 3. [Installation](#3-installation)
 4. [Configuration](#4-configuration)
-5. [Troubleshooting](#5-troubleshooting)
+5. [HTTPS / TLS (Optional)](#5-https--tls-optional)
+6. [Troubleshooting](#6-troubleshooting)
 
 ## 0. Preface
 
