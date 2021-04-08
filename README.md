@@ -36,8 +36,8 @@ It's highly recommended that you setup https with DDNS (afraid org) + Lets Encry
 	arm_freq=1600
 	h264_freq=600
 	```  
-8. Create a new file named `ssh` in the micro SD card's root directory and put a single space in it
-9. Create another new file named `wpa_supplicant.conf` and set it's contents to:
+8. If using ssh, create a new file named `ssh` in the micro SD card's root directory and put a single space in it
+9. If using wifi, create another new file named `wpa_supplicant.conf` and set it's contents to:
 
 	```
 	country=<iso alpha-2 code>
