@@ -63,7 +63,7 @@ If you would like to boot off a USB, HDD, or SSD, follow [this](https://www.toms
 3. Login to the shell with login `pi` and password `raspberry`
 4. Change root password with `sudo passwd root` the enter the new root password
 5. Create a new user `sudo adduser alice`
-6. Add user to sudo group `sudo usermod -a -G sudo [new user name]`
+6. Add user to sudo group `sudo usermod -aG sudo [new user name]`
 7. Switch to new user `sudo su -  [new user name]`
 8. Stop user "pi" processes `sudo pkill -u pi`
 9. Delete the "pi" user `sudo deluser -remove-home pi`
