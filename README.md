@@ -148,6 +148,8 @@ server {
     listen [::]:80 default_server;
     server_name <my.d0m41n.0rg>;
     location / {
+    	proxy_set_header Host $host;
+    	proxy_set_header X-Real-IP $remote_addr;
         proxy_pass http://127.0.0.1:8765/;
     }
 }
