@@ -128,7 +128,7 @@ sudo pip install -U motioneye
 sudo systemctl restart motioneye
 ```
 
-## 5. HTTPS / TLS (Optional)
+## 5. HTTPS / TLS and AUTH (Optional)
 1. Acquire a [sub]domain via https://freedns.afraid.org/ (free) or some other domain / DNS service and point it to your IP (DDNS is recommended instead)
 
 2. Run the following commands
@@ -165,6 +165,10 @@ sudo certbot --nginx
 
 6. Disable portforward for port 80 to 80, and enable it for port 443 to 443
 
+7. See auth setup here
+
+- https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/
+- https://nginx.org/en/docs/http/ngx_http_auth_basic_module.html
 
 ## 6. Troubleshooting
 ### 1. Micro SD card not showing
