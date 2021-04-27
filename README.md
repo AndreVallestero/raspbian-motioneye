@@ -172,6 +172,42 @@ sudo certbot --nginx
 - https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/
 - https://nginx.org/en/docs/http/ngx_http_auth_basic_module.html
 
+8. This should result in a NginX config like the following:
+
+```
+server {
+    server_name nvr4.us.to;
+
+    auth_basic "restricted";
+    auth_basic_user_file /etc/nginx/.htpasswd;
+
+    location / {
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_pass http://127.0.0.1:8080/;
+    }
+
+    listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/nvr4.us.to/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/nvr4.us.to/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = nvr4.us.to) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name nvr4.us.to;
+    return 404; # managed by Certbot
+}
+```
+
 ## 6. Troubleshooting
 ### 1. Micro SD card not showing
 1. Press `Win` + `R`
