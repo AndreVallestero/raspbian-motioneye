@@ -90,7 +90,7 @@ If you would like to boot off a USB, HDD, or SSD, follow [this](https://www.toms
 	sudo reboot
 	```
 12. Reconnect to the Raspberry Pi with PuTTY
-13. Run `sudo raspi-config` then run `Update` then change netowrk hostname and localization options
+13. Run `sudo raspi-config` then run `Update` then change network hostname and localization options
 14. Reboot and reconnect to the Raspberry Pi with PuTTY using the new hostname/IP address
 15. Setup [fail2ban](https://pimylifeup.com/raspberry-pi-fail2ban/) for added security
 
